@@ -28,7 +28,7 @@ class Mahasiswa extends universitas implements Status{
     this._IPK = n;
   }
   get IPK => this._IPK;
-
+  get NRP => this._NRP;
   void setSKS(int N){
     if(N<2||N>24){
       print("SKS tidak valid");
