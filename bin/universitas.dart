@@ -1,8 +1,8 @@
-class Person{
+class universitas{
   String? _nama;
   int _usia=0;
   int _sks=0;
-  Person(this._nama,this._usia,this._sks);
+  universitas(this._nama,this._usia,this._sks);
 
   //Get
   String get nama => this._nama!;

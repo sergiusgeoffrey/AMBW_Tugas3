@@ -1,10 +1,10 @@
-import 'person.dart';
+import 'universitas.dart';
 
-class Pegawai extends Person {
+class Pegawai extends universitas {
   int _gaji=0;
   int _tunjangan=0;
   int _kehadiran=0;
-  Pegawai(String? nama, int usia, int sks) : super(nama, usia, sks){
+  Pegawai(String? nama, int usia, int sks,int gaji,int tunjangan, int kehadiran) : super(nama, usia, sks){
     this.gaji = gaji;
     this.tunjangan = tunjangan;
     this.kehadiran = kehadiran;
