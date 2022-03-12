@@ -1,8 +1,7 @@
 import 'pegawai.dart';
-import 'status.dart';
 
-class Staff extends Pegawai  with Absensi implements Status {
-  Staff(String? nama, int usia, int sks,int gaji,int tunjangan, int kehadiran) : super(nama, usia, sks,gaji, tunjangan, kehadiran);
+class Staff extends Pegawai {
+  Staff(String? nama, int usia, int sks,int gaji,int tunjangan) : super(nama, usia, sks,gaji, tunjangan);
   bool Active=true;
   int countCutiDays=12;
   @override
