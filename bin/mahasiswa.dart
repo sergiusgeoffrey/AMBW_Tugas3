@@ -5,24 +5,16 @@ class Mahasiswa extends universitas {
   double _IPK=0;
   bool Active=true;
   //int semester=0;
-  Mahasiswa(String? nama, int usia,int sks,double IPS, double IPK) : super(nama, usia, sks){
+  Mahasiswa(String? nama, int usia,int sks,{double IPS=0, double IPK=0}) : super(nama, usia, sks){
     this._IPS = IPS;
     this._IPK = IPK;
   }
 
-  @override
-  String status() {
-    if(Active){
-      return "Mahasiswa Aktif";
-    } else {
-      return "Mahasiswa Cuti";
-    } 
-  }
   set IPS(double input){
     this._IPS = input;
     updateIPK(input);
   }
-
+  
   void updateIPK(double n){
     this._IPK = n;
     // if(IPK==0&&semester==0){
@@ -33,9 +25,12 @@ class Mahasiswa extends universitas {
     //   semester++;
     // }
   }
-  
-  get IPK => this._IPK;
-
+  double getIPK(){
+    return this._IPK;
+  }
+  double getIPS(){
+    return this._IPS;
+  }
   void setSKS(int N){
     if(N<2){
       print("SKS kurang dari batas minimal");
@@ -45,22 +40,27 @@ class Mahasiswa extends universitas {
       this.sks = N;
     } 
   }
-  void changeStatus(){
+  void changeStatusCuti(){
     if(Active=true){
       Active=false;
+      print("Mahasiswa mengambil Cuti");
     } else if (Active=false){
       Active=true;
+      print("Mahasiswa menjadi Aktif");
     }
   }
   void printAll(){
-    print("SKS : ${this.sks}");
-    print("IPS : ${this._IPS}");
-    print("IPK : ${this._IPK}");
+    print("Nama: $nama");
+    print("Usia: $usia");
+    print("SKS : $sks");
+    print("IPS : $_IPS");
+    print("IPK : $_IPK");
     if(Active){
       print("Status : Mahasiswa Aktif");
     } else {
       print("Status  : Mahasiswa Cuti");
-    } 
+    }
+    print("");
   }
   int viewSKS(){
     return this.sks;
